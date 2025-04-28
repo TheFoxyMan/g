@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Carta de Amor Flutuante</title>
+  <style>
+      body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(#ffe0e9, #ffc2d1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: 'Georgia', serif;
+    }
+    
+    .carta {
+      width: 200px;
+      height: 120px;
+      background: #fff0f5;
+      border: 2px solid #d6336c;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      animation: flutuar 3s ease-in-out infinite;
+      cursor: pointer;
+      transition: transform 0.5s;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    
+    .carta.aberta {
+      width: 300px;
+      height: 400px;
+      animation: none;
+      flex-direction: column;
+      padding: 20px;
+    }
+    
+    .carta .texto {
+      display: none;
+      color: #333;
+      font-size: 18px;
+    }
+    
+    .carta.aberta .texto {
+      display: block;
+      margin-top: 20px;
+    }
+    
+    .icone-carta {
+      font-size: 50px;
+      color: #d6336c;
+      transition: opacity 0.5s;
+    }
+    
+    .carta.aberta .icone-carta {
+      opacity: 0;
+    }
+    
+    @keyframes flutuar {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+    
+  </style>
+</head>
+<body>
+
+<div class="carta" onclick="abrirCarta()">
+  <div class="icone-carta">✉️</div>
+  <div class="texto">
+            Ana Clara <br>
+    Quando nos falamos pela primeira vez,
+        Não imaginei que você seria tão importante para mim,
+        Eu te amo e quero passar cada dia da minha vida ao seu lado.<br><br>
+
+        Desde que você entrou na minha vida, tudo se tornou mais bonito.
+        Seu sorriso é o meu sol, seu abraço é o meu lar.<br><br>
+
+        Te amo mais a cada dia que passa!<br><br>
+
+        Com todo o meu amor,<br>Thiago Silva
+  </div>
+</div>
+<script>
+    function abrirCarta() {
+    const carta = document.querySelector('.carta');
+    carta.classList.toggle('aberta');
+  }
+</script>
+</body>
+</html>
